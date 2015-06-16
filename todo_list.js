@@ -7,7 +7,13 @@ newTodoList.prototype.add = function(item){
 };
 
 newTodoList.prototype.list = function(){
+
+
   for (i=0; i < this.tasks.length; i++){
+
+    if (this.tasks[i].id === null){
+      this.tasks.splice(i, 1);
+    }
     console.log(this.tasks[i]);
   };
 };
@@ -24,8 +30,9 @@ Task.prototype.complete = function () {
 };
 
 Task.prototype.remove = function () {
-  this.delete
-  console.log("Removed");
+  this.id = null;
+  this.description = null;
+  this.completed = null;
 };
 // Driver code
 
@@ -47,5 +54,7 @@ console.log(breadTask.completed);
 groceryList.list();
 
 breadTask.remove();
-
+console.log(breadTask.description);
+groceryList.list();
+console.log(breadTask.description);
 
